@@ -1,0 +1,34 @@
+# INSTRUCCIONES PARA EJECUTAR EL PROYECTO
+
+1. INSTALACIÓN:
+   - Asegúrate de tener Node.js (v16+) y npm instalados.
+   - Clona el repositorio:
+     git clone https://github.com/tu-usuario/modulo-connectbuy.git
+   - Instala dependencias:
+     cd modulo-connectbuy && npm install
+
+2. EJECUCIÓN:
+   - Modo desarrollo (con WebSocket simulado):
+     npm run dev
+   - Abre tu navegador en: http://localhost:5173
+
+3. PRUEBAS:
+   - Ejecuta tests unitarios:
+     npm test
+
+4. CONFIGURACIÓN PARA PRODUCCIÓN:
+   - Para conectar con Laravel Reverb real:
+     - Edita src/api/websocketService.ts y reemplaza:
+       wsHost: 'tu-backend.com',
+       wsPort: 8080,
+   - Construye el proyecto:
+     npm run build
+
+5. ENDPOINTS SIMULADOS:
+   - API de promociones: Mock en `promotionsApi.ts`
+   - WebSocket: Simulación en `websocketService.ts` (envía notificación a los 5 segundos)
+
+⚠️ NOTAS:
+- Este proyecto usa Vite + React + TypeScript.
+- Requiere conexión a un backend real para producción (configura tus variables en .env).
+- Las pruebas mockean las llamadas a API/WebSocket.
